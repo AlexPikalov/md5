@@ -37,6 +37,7 @@ test_message: db '', EOF
 
 section .text
 global _start
+extern str_len 
 
 _start:
 chunk_loop:
@@ -49,17 +50,3 @@ chunk_loop:
   mov rdi, 0
   syscall
 
-; Calculate length of string in bytes
-; Input:
-;  * rdi - string buffer pointer
-; Output:
-;  * rax - string len in bytes
-str_len:
-  xor rax, rax            ; initialise byte counter
-  .counter_loop:          ; bytes counter loop
-  cmp byte rdi[rax], EOF  ; check if current byte is EOF
-  je .end                 ; if EOF return from the routine
-  inc rax                 ; if not EOF increment counter
-  jmp .counter_loop       ; continue counting
-  .end:
-  ret
