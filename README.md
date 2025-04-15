@@ -1,10 +1,14 @@
-# Development Plan
+# MD5 hashing (assembly implementation)
 
-- [x] setup memory layout to include K, s, last_chunk,
-      constants - a0, b0, c0, d0 etc
-- [x] implement and test logic that creates a last chunk
-- [x] implement single 512-bit chunk hashing
-- [x] test single chunk hashing logic on the last chunk (mess-
-      ages which length is less then 448 bits (56 bytes) fit into
-      the last chunk
-- [ ] implement message by-chunk-processing logic
+This is a toy project created for learning assembly programming language. As of now the algorithm is implemented with following limitations:
+
+1. max message length is 2^64-1 bits
+2. message length is an integer number of bytes
+3. no support for stream inputs (messages of initially undetermined length)
+4. code is not position-independent
+
+Command-line interface for the utility is a work in progress.
+
+## License
+
+MIT License 2025 Oleksandr Pikalov

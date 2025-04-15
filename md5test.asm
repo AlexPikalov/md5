@@ -2,7 +2,7 @@ section .rodata
 msg: db ""
 msg_len: dq 0
 
-msg2: db 1, 2, 3, 4, 5, 6
+msg2: db "12345678901234567890123456789012345678901234567890123456789012345678901234567890"
 msg2_len: dq $-msg2
 
 section .text
